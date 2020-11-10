@@ -74,6 +74,8 @@ const (
 	RegisteredSealProof_StackedDrg512MiBV1 = RegisteredSealProof(2)
 	RegisteredSealProof_StackedDrg32GiBV1  = RegisteredSealProof(3)
 	RegisteredSealProof_StackedDrg64GiBV1  = RegisteredSealProof(4)
+
+	RegisteredSealProof_StackedDrg8GiBV1  = RegisteredSealProof(100)
 )
 
 type RegisteredPoStProof int64
@@ -89,6 +91,9 @@ const (
 	RegisteredPoStProof_StackedDrgWindow512MiBV1  = RegisteredPoStProof(7)
 	RegisteredPoStProof_StackedDrgWindow32GiBV1   = RegisteredPoStProof(8)
 	RegisteredPoStProof_StackedDrgWindow64GiBV1   = RegisteredPoStProof(9)
+
+	RegisteredPoStProof_StackedDrgWinning8GiBV1  = RegisteredPoStProof(100)
+	RegisteredPoStProof_StackedDrgWindow8GiBV1   = RegisteredPoStProof(101)
 )
 
 // Metadata about a seal proof type.
@@ -113,6 +118,11 @@ var SealProofInfos = map[RegisteredSealProof]*SealProofInfo{
 		SectorSize:                 512 << 20,
 		WinningPoStProof:           RegisteredPoStProof_StackedDrgWinning512MiBV1,
 		WindowPoStProof:            RegisteredPoStProof_StackedDrgWindow512MiBV1,
+	},
+	RegisteredSealProof_StackedDrg8GiBV1: {
+		SectorSize:                 8 << 30,
+		WinningPoStProof:           RegisteredPoStProof_StackedDrgWinning8GiBV1,
+		WindowPoStProof:            RegisteredPoStProof_StackedDrgWindow8GiBV1,
 	},
 	RegisteredSealProof_StackedDrg32GiBV1: {
 		SectorSize:                 32 << 30,
@@ -161,6 +171,8 @@ var PoStSealProofTypes = map[RegisteredPoStProof]RegisteredSealProof{
 	RegisteredPoStProof_StackedDrgWindow8MiBV1:    RegisteredSealProof_StackedDrg8MiBV1,
 	RegisteredPoStProof_StackedDrgWinning512MiBV1: RegisteredSealProof_StackedDrg512MiBV1,
 	RegisteredPoStProof_StackedDrgWindow512MiBV1:  RegisteredSealProof_StackedDrg512MiBV1,
+	RegisteredPoStProof_StackedDrgWinning8GiBV1:  RegisteredSealProof_StackedDrg8GiBV1,
+	RegisteredPoStProof_StackedDrgWindow8GiBV1:   RegisteredSealProof_StackedDrg8GiBV1,
 	RegisteredPoStProof_StackedDrgWinning32GiBV1:  RegisteredSealProof_StackedDrg32GiBV1,
 	RegisteredPoStProof_StackedDrgWindow32GiBV1:   RegisteredSealProof_StackedDrg32GiBV1,
 	RegisteredPoStProof_StackedDrgWinning64GiBV1:  RegisteredSealProof_StackedDrg64GiBV1,
