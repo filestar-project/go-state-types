@@ -15,9 +15,10 @@ const (
 	Version5                  // tape      (specs-actors v2.1.0)
 	Version6                  // kumquat
 	Version7                  // 8g-sector and fix-iteration-non-determinism)
-	Version8                  // upcoming
+	Version8                  // stake
 	Version9                  // upcoming
 	Version10                 // upcoming
+	Version11                 // upcoming
 
 	// VersionMax is the maximum version number
 	VersionMax = Version(math.MaxUint32)
