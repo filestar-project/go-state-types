@@ -31,3 +31,8 @@ type Randomness []byte
 // RandomnessLength is the length of the randomness slice.
 const RandomnessLength = 32
 
+type StakePower = big.Int
+
+func NewStakePower(t int64) StakePower {
+	return big.NewInt(t)
+}
